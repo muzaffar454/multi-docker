@@ -8,9 +8,9 @@ const redisClient = redis.createClient({
 });
 const sub = redisClient.duplicate();
 
-function fib(insert) {
-  if (insert < 2) return 1;
-  return fib(insert - 1) + fib(insert - 2);
+function fib(index) {
+  if (index < 2) return 1;
+  return fib(index - 1) + fib(index - 2);
 }
 
 sub.on('message', (channel, message) => {
